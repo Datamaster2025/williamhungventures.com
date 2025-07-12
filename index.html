@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>William Hung Ventures - Entertainment & Speaking</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e0e7ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2c5aa0 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #1e3a8a;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 80px 0;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            color: #1e3a8a;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* TEDx Video Section */
+        .video-section {
+            background: #f8fafc;
+            padding: 60px 0;
+            margin: 60px 0;
+            border-radius: 20px;
+        }
+
+        .video-container {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .video-placeholder {
+            background: #e2e8f0;
+            height: 400px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+            border: 2px dashed #cbd5e1;
+        }
+
+        .video-placeholder p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Speaking Topics */
+        .topics-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .topic-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #2c5aa0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .topic-item h4 {
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: #f8fafc;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #2c5aa0;
+        }
+
+        .contact-form button {
+            background: #2c5aa0;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #1e3a8a;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">William Hung Ventures</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#speaking">Speaking</a></li>
+                <li><a href="#entertainment">Entertainment</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>William Hung</h1>
+            <p>From American Idol to Public Service: Inspiring Others Through Authentic Transformation</p>
+            <a href="#speaking" class="cta-button">Book a Speaking Engagement</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- TEDx Section -->
+            <section id="featured" class="section">
+                <div class="video-section">
+                    <div class="video-container">
+                        <h2>Featured TEDx Talk</h2>
+                        <p>"What is it like to go from William Hung the American Idol contestant, to William Hung the private citizen?"</p>
+                        <div class="video-placeholder">
+                            <p>TEDx Chula Vista Video<br>
+                            <small>Replace this with your YouTube embed code</small></p>
+                        </div>
+                        <p><em>Discover the complex journey of reinvention and finding real purpose beyond the spotlight.</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="section">
+                <h2>About William Hung</h2>
+                <p>William Hung is an emerging voice who discovered his true calling through an extraordinary journey of reinvention. From his viral American Idol moment to his #1 independent album "Inspiration" in 2004, to his current role as a data professional in local government, William brings a unique perspective on resilience, transformation, and finding purpose.</p>
+                <p>With a Bachelor's degree in Mathematics and an MBA from Marist College, plus seven years of experience in middle management roles at Los Angeles County Sheriff's Department and Department of Public Health, William combines personal experience with professional expertise to deliver powerful, practical insights.</p>
+            </section>
+
+            <!-- Speaking Section -->
+            <section id="speaking" class="section">
+                <h2>Speaking Topics</h2>
+                <p>William is a highly sought-after speaker at corporations and professional association conferences worldwide, offering insights on life transitions, resilience, and personal reinvention.</p>
+                
+                <div class="topics-list">
+                    <div class="topic-item">
+                        <h4>Life After the Spotlight</h4>
+                        <p>Finding your true purpose when the world moves on</p>
+                    </div>
+                    <div class="topic-item">
+                        <h4>The Art of Reinvention</h4>
+                        <p>From entertainment to public service: A complete career transformation</p>
+                    </div>
+                    <div class="topic-item">
+                        <h4>Making Complex Life Choices</h4>
+                        <p>Navigating major decisions with clarity and practical application</p>
+                    </div>
+                    <div class="topic-item">
+                        <h4>Resilience and Recovery</h4>
+                        <p>Bouncing back from public scrutiny and finding authentic success</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Entertainment Section -->
+            <section id="entertainment" class="section">
+                <h2>Entertainment Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>🎤 Live Performances</h3>
+                        <p>Engaging performances that entertain, educate, and empower audiences with inspirational messages and authentic storytelling.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>📹 Cameo Videos</h3>
+                        <p>Personalized video messages for birthdays, celebrations, motivation, or any special occasion. Bringing joy and inspiration directly to you.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>🎭 Corporate Events</h3>
+                        <p>Unique entertainment experiences for company events, combining humor, inspiration, and authentic storytelling.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact-section">
+                <div class="container">
+                    <h2>Get In Touch</h2>
+                    <p>Ready to inspire your audience or add something special to your event? Let's connect!</p>
+                    
+                    <form class="contact-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Event/Opportunity Type">
+                        <textarea placeholder="Tell me about your event or how I can help..." rows="5" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 William Hung Ventures. All rights reserved.</p>
+            <p>Inspiring transformation through authentic storytelling and professional expertise.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Contact form handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
